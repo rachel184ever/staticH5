@@ -82,7 +82,7 @@ wx.config({
     timestamp: timestamp, // 必填，生成签名的时间戳
     nonceStr, // 必填，生成签名的随机串
     signature: SHA1(`jsapi_ticket=${ticket}&noncestr=${nonceStr}&timestamp=${timestamp}&url=https://rachel184ever.github.io/staticH5/`),// 必填，签名
-    jsApiList: ['http://res.wx.qq.com/open/js/jweixin-1.4.0.js'] // 必填，需要使用的JS接口列表
+    jsApiList: ['chooseImage'] // 必填，需要使用的JS接口列表
 })
 
 wx.ready(function(){
