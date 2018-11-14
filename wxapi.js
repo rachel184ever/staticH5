@@ -1,6 +1,6 @@
 function ready() {
     console.log(window.__wxjs_environment === 'miniprogram') // true
-    wx.chooseImage({
+    wx.miniProgram.chooseImage({
         count: 1,
         sizeType: ['original', 'compressed'],
         sourceType: ['album', 'camera'],
