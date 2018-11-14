@@ -1,10 +1,18 @@
+
+const { SHA1 } = require('./sha1')
+
+const accToken = '15__NFeOk1iUOef8Ap2QidZLUu51fycxG4bV7yiYt0cwLnHuH7GI91IPXe1nzL8wjVPctZIMwbfDXP8xZ5ko3a4VTlGse3DMVESO55bMR1xOO59hdH1675IzDAOIzwocG_kwNRQnRMXuY0d2Ne2KOCaAAAPTH'
+const ticket = 'LIKLckvwlJT9cWIhEQTwfM8lwJeSbsPSo0DlFiwzpa5kK2KxAKCO9_w6aQEn56fQhtIC9IPGnT0XfZBkK253wQ'
+const timestamp = new Date().getTime()
+const nonceStr = 'Wm3WZYTPz0wzccnW'
+
 wx.config({
     debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-    appId: '', // 必填，公众号的唯一标识
-    timestamp: new Date().getTime(), // 必填，生成签名的时间戳
-    nonceStr: '', // 必填，生成签名的随机串
-    signature: '',// 必填，签名
-    jsApiList: [] // 必填，需要使用的JS接口列表
+    appId: 'wx18dcd72830075edf', // 必填，公众号的唯一标识
+    timestamp: timestamp, // 必填，生成签名的时间戳
+    nonceStr, // 必填，生成签名的随机串
+    signature: SHA1(`jsapi_ticket=${ticket}&noncestr=${nonceStr}&timestamp=${timestamp}&url=https://rachel184ever.github.io/staticH5/`),// 必填，签名
+    jsApiList: ['http://res.wx.qq.com/open/js/jweixin-1.4.0.js'] // 必填，需要使用的JS接口列表
 })
 
 wx.ready(function(){
