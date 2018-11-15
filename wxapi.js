@@ -131,7 +131,7 @@ function getUrlParam(name) {//封装方法
 wx.miniProgram.postMessage({ data: 'foo' })
 wx.miniProgram.postMessage({ data: {foo: 'bar'} })
 wx.miniProgram.getEnv(function(res) { console.log(res.miniprogram) })
-wx.miniProgram.chooseImage({
+wx.chooseImage({
             count: 1,
         sizeType: ['original', 'compressed'],
         sourceType: ['album', 'camera'],
