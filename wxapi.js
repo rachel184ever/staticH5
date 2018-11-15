@@ -122,7 +122,7 @@ const nonceStr = 'Wm3WZYTPz0wzccnW'
 // }
 
 
-wx.miniProgram.navigateTo({url: '/path/to/page'})
+wx.miniProgram.navigateTo({url: 'pages/index/index'})
 wx.miniProgram.postMessage({ data: 'foo' })
 wx.miniProgram.postMessage({ data: {foo: 'bar'} })
 wx.miniProgram.getEnv(function(res) { console.log(res.miniprogram) })
