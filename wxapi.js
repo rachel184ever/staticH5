@@ -131,5 +131,14 @@ function getUrlParam(name) {//封装方法
 wx.miniProgram.postMessage({ data: 'foo' })
 wx.miniProgram.postMessage({ data: {foo: 'bar'} })
 wx.miniProgram.getEnv(function(res) { console.log(res.miniprogram) })
-wx.miniProgram.navigateTo({url: '../activity/activity'})
+wx.miniProgram.chooseImage({
+            count: 1,
+        sizeType: ['original', 'compressed'],
+        sourceType: ['album', 'camera'],
+        success(res) {
+            // tempFilePath可以作为img标签的src属性显示图片
+            const tempFilePaths = res.tempFilePaths
+            console.log(tempFilePaths)
+        }
+})
 
