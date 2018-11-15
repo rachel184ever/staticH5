@@ -127,8 +127,9 @@ function getUrlParam(name) {//封装方法
     return null; //返回参数值
     }
 
-wx.miniProgram.navigateTo({url: '../index/index'})
+    console.log(getUrlParam("imgPath"))
 wx.miniProgram.postMessage({ data: 'foo' })
 wx.miniProgram.postMessage({ data: {foo: 'bar'} })
 wx.miniProgram.getEnv(function(res) { console.log(res.miniprogram) })
-console.log(getUrlParam("imgPath"))
+wx.miniProgram.navigateTo({url: '../activity/activity'})
+
