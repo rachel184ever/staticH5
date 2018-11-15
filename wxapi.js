@@ -120,10 +120,15 @@ const nonceStr = 'Wm3WZYTPz0wzccnW'
 // } else {
 //     ready()
 // }
-
+function getUrlParam(name) {//封装方法
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    var r = window.location.search.substr(1).match(reg); //匹配目标参数
+    if (r != null) return unescape(r[2]);
+    return null; //返回参数值
+    }
 
 wx.miniProgram.navigateTo({url: '../index/index'})
 wx.miniProgram.postMessage({ data: 'foo' })
 wx.miniProgram.postMessage({ data: {foo: 'bar'} })
 wx.miniProgram.getEnv(function(res) { console.log(res.miniprogram) })
-console.log(UrlParm.parm("imgPath"))
+console.log(getUrlParam("imgPath"))
